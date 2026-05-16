@@ -1,4 +1,3 @@
----
 _schema-version: 3.3.0
 ID: tmstest
 version: 1.0.0
@@ -24,4 +23,8 @@ modules:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
         properties:
           srv-url: ${default-url}
-    requires: []
+    requires:
+      []
+
+resources:
+  []

@@ -1,0 +1,33 @@
+
+### General project setup
+general:
+  inferBuildTool: true
+
+### Step-specific configuration
+steps:
+  mavenExecute:
+    dockerImage: devxci/mbtci:1.0.14
+
+  artifactPrepareVersion:
+    versioningType: cloud_noTag
+
+  npmExecuteLint:
+    failOnError: true
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
+  tmsUpload:
+    nodeName: "iDeal_Quality"
+    credentialsId: "tms-key"
+### Stage-specific configuration
+stages:
+  'Confirm':
+    manualConfirmation: false
+Release:
+  cfTargets:
+    - org: 'org-AOS-dev'
+      space: 'QuoteSMART Development'
+      apiEndpoint: 'https://api.cf.us10-001.hana.ondemand.com'
+      appName: 'tmstest'
+      credentialsId: 'deploy-dev-cf'
+      tmsUpload: false
+
