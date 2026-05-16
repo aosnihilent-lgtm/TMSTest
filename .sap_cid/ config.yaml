@@ -17,8 +17,8 @@ stages:
     cfOrg: "org-AOS-dev"
     cfSpace: "QuoteSMART Development"
     cfAppName: "tmstest"
-    cfCredentialsId: "deploy-cf-cred"
-    tmsUpload: true
+    cfCredentialsId: "deploy-dev-cf"
+    tmsUpload: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"

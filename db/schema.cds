@@ -7,6 +7,6 @@ entity Books {
 }
 entity Books1 {
   key ID : Integer;
-  title11  : String;
+  title1  : String;
   stock1  : Integer;
 }
