@@ -1,17 +1,6 @@
-###
-# This file configures the project "Piper" pipeline of your project.
-# For a reference of the configuration concept and available options, please have a look into its documentation.
-#
-# The documentation for the most recent pipeline version can always be found at:
-#    https://www.project-piper.io/
-#
-# This is a YAML-file. YAML is an indentation-sensitive file format. Please make sure to properly indent changes to it.
-###
-
-### General project setup
-general:
-  buildTool: "mta"
+---
 stages:
+<<<<<<< Updated upstream:.pipeline/ config.yml
   Build:
     mavenExecuteStaticCodeChecks: false
     npmExecuteLint: false
@@ -40,3 +29,22 @@ steps:
   tmsUpload:
     nodeName: "iDeal_Quality"
     credentialsId: "tms-key"
+=======
+  build:
+    buildTool: "mta"
+    buildDescriptor: "mta.yaml"
+    buildToolVersion: "MBTJ21N24"
+  malwareScan:
+    scan: false
+  release:
+    cfDeploy:
+      strategy: "default"
+      apiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
+      org: "org-AOS-dev"
+      space: "QuoteSMART Development"
+      credential: "deploy-dev-cf"
+    cloudTransportManagement:
+      nodeOperation: "upload"
+      nodeName: "iDeal_Development"
+      credential: "tms-key"
+>>>>>>> Stashed changes:.sap_cid/ config.yaml
